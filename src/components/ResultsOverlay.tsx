@@ -95,6 +95,8 @@ height: 10px;
 }
 `;
 
+//Create functional component to get state of search and returns overlay when results exist
+
 const ResultsOverlay: React.FC<ResultsOverlayProps> = () => {
   const results = useSelector(selectSearchResults);
   const isLoading = useSelector(selectSearchLoading);
@@ -105,7 +107,7 @@ const ResultsOverlay: React.FC<ResultsOverlayProps> = () => {
      <OverlayContainer data-testid="results-overlay">
       {isLoading && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
-      
+
       {results && resultsLength && (
         <AllBooks>
         <ListofBooks>

@@ -29,7 +29,7 @@ const SearchInput = styled.input`
 `;
 
 
-
+// dispatches search query 
 
 export const SearchBar: React.FC<SearchBarProps> = () => {
   const [query, setQuery] = useState('');
@@ -40,7 +40,7 @@ export const SearchBar: React.FC<SearchBarProps> = () => {
   };
 
     useEffect(() => {
-    if (query.length >= 3) {
+    if (query.length >= 1) {
       dispatch(searchQueryUpdated(query));
       dispatch(searchBooks(query) as any);
     }else{
